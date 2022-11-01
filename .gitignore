@@ -13,7 +13,7 @@ __pycache__/
 
 # build output
 dist/
-dist-*.zip
+dist.zip
 
 # etc..
 rank.db

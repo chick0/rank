@@ -5,6 +5,8 @@
         ".vscode/": true,
         ".yarn/": true,
         "dist/": true,
+        "dist.zip": true,
+        "rank.db": true,
         "node_modules/": true,
         "**/__pycache__/": true,
         "venv/": true
