@@ -1,0 +1,15 @@
+.git/
+.github/
+.vscode/
+.yarn/
+__pycache__/
+app/
+dist/
+migrations/
+node_modules/
+public/bulma.min.css
+venv/
+.flake8
+requirements.in
+requirements.txt
+yarn.lock
