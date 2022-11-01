@@ -30,7 +30,7 @@ def create_app():
     @app.get("/<path:path>")
     def frontend(path = None):  # noqa: E251
         if path is None:
-            return "지정된 경로가 없습니다.", 400
+            path = "index.html"
 
         try:
             response: Response = send_from_directory(
