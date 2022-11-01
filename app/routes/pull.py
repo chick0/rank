@@ -28,9 +28,9 @@ def pull():
                 created_at=int(x.created_at.timestamp())
             )
             for x in Rank.query.order_by(
-                Rank.score
-            ).limit(
-                100
-            ).all()
+                Rank.score.desc()
+            ).filter(
+                Rank.score > 0
+            ).limit(50).all()
         ]
     ).dict()
