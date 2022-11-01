@@ -1,0 +1,14 @@
+[flake8]
+exclude =
+    .git,
+    .github,
+    .vscode,
+    .yarn,
+    __pycache__,
+    dist,
+    migrations,
+    node_modules,
+    public,
+    src,
+    venv,
+max-line-length = 120

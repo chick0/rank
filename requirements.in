@@ -1,0 +1,6 @@
+flask
+flask-migrate
+flask-sqlalchemy
+pydantic
+waitress
+flake8
