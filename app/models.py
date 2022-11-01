@@ -13,8 +13,6 @@ class Rank(db.Model):
 
     name = db.Column(
         db.String(60),
-        unique=True,
-        primary_key=True,
         nullable=False
     )
 
