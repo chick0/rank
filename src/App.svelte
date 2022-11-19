@@ -44,7 +44,32 @@
             </thead>
             <tbody>
                 {#each rank_list as rank, i}
-                    <tr>
+                    <tr
+                        on:click="{() => {
+                            let code = prompt('비밀번호를 입력해주세요.');
+
+                            if (code.length == 0) {
+                                return;
+                            }
+
+                            fetch('/api/drop', {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                },
+                                body: JSON.stringify({
+                                    id: rank.id,
+                                    code: code,
+                                }),
+                            })
+                                .then((resp) => resp.json())
+                                .then((json) => {
+                                    alert(json.message);
+                                })
+                                .catch(() => {
+                                    alert('알 수 없는 원인으로 해당 랭킹 삭제에 실패했습니다.');
+                                });
+                        }}">
                         <td class="name">
                             <span class="tag is-black is-large rank">{i + 1}등</span>
                             <span class="name">{rank.name}</span>
@@ -61,6 +86,10 @@
 <style>
     table {
         table-layout: fixed;
+    }
+
+    tbody tr {
+        cursor: pointer;
     }
 
     th,
