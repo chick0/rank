@@ -12,7 +12,7 @@ bp = Blueprint("push", __name__, url_prefix="/api/push")
 
 class RankRequest(BaseModel):
     name: str
-    score: str
+    score: int
 
 
 @bp.post("")

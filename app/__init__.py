@@ -4,8 +4,8 @@ from os.path import dirname
 from importlib import import_module
 
 from flask import Flask
-from flask import Response
 from flask import send_from_directory
+from flask.wrappers import Response
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from werkzeug.exceptions import NotFound
@@ -45,8 +45,10 @@ def create_app():
 
         return response
 
+    from app.routes import drop
     from app.routes import pull
     from app.routes import push
+    app.register_blueprint(drop.bp)
     app.register_blueprint(pull.bp)
     app.register_blueprint(push.bp)
 
